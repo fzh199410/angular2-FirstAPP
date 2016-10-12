@@ -1,0 +1,87 @@
+<div style="background-color: #eee">
+    <div class="container-fluid">
+    <!--<div class="row" style="padding: 3em 0">-->
+            <!--<div style="display: block;">-->
+                <!--<canvas baseChart width="400" height="400"-->
+                        <!--[datasets]="lineChartData"-->
+                        <!--[labels]="lineChartLabels"-->
+                        <!--[options]="lineChartOptions"-->
+                        <!--[colors]="lineChartColors"-->
+                        <!--[legend]="lineChartLegend"-->
+                        <!--[chartType]="lineChartType"-->
+                        <!--(chartHover)="lineChartHovered($event)"-->
+                        <!--(chartClick)="lineChartClicked($event)"></canvas>-->
+            <!--</div>-->
+        <!--<div class="col-md-5" style="margin-bottom: 10px">-->
+            <!--<table class="table table-responsive table-condensed">-->
+                <!--<tr>-->
+                    <!--<th *ngFor="let label of lineChartLabels">{{label}}</th>-->
+                <!--</tr>-->
+                <!--<tr *ngFor="let d of lineChartData">-->
+                    <!--<td *ngFor="let dd of d.data">{{dd}}</td>-->
+                <!--</tr>-->
+            <!--</table>-->
+            <!--<button (click)="lineRandomize()">CLICK</button>-->
+        <!--</div>-->
+    <!--</div>-->
+    <!--这个chart TM的有毒  不能写他-->
+
+
+    <div class="row" style="padding: 3em 3em">
+        <div style="display: block;">
+            <canvas baseChart
+                    [datasets]="barChartData"
+                    [labels]="barChartLabels"
+                    [options]="barChartOptions"
+                    [legend]="barChartLegend"
+                    [chartType]="barChartType"
+                    (chartHover)="barChartHovered($event)"
+                    (chartClick)="barChartClicked($event)">
+            </canvas>
+        </div>
+        <button (click)="barRandomize()">Update</button>
+    </div>
+
+        <div class="row" style="padding: 3em 3em">
+            <div style="display: block;">
+                <canvas baseChart
+                        [data]="doughnutChartData"
+                        [labels]="doughnutChartLabels"
+                        [chartType]="doughnutChartType"
+                        (chartHover)="doughnutChartHovered($event)"
+                        (chartClick)="doughnutChartClicked($event)"></canvas>
+            </div>
+        </div>
+        <div class="row" style="padding: 3em 3em">
+            <div style="display: block;">
+                <canvas baseChart
+                        [datasets]="radarChartData"
+                        [labels]="radarChartLabels"
+                        [chartType]="radarChartType"
+                        (chartHover)="radarChartHovered($event)"
+                        (chartClick)="radarChartClicked($event)"></canvas>
+            </div>
+        </div>
+        <div class="row" style="padding: 3em 3em">
+            <div style="display: block;">
+                <canvas baseChart
+                        [data]="pieChartData"
+                        [labels]="pieChartLabels"
+                        [chartType]="pieChartType"
+                        (chartHover)="pieChartHovered($event)"
+                        (chartClick)="pieChartClicked($event)"></canvas>
+            </div>
+        </div>
+        <div class="row" style="padding: 3em 3em">
+            <div style="display: block;">
+                <canvas baseChart
+                        [data]="polarAreaChartData"
+                        [labels]="polarAreaChartLabels"
+                        [legend]="polarAreaLegend"
+                        [chartType]="polarAreaChartType"
+                        (chartHover)="polarAreaChartHovered($event)"
+                        (chartClick)="polarAreaChartClicked($event)"></canvas>
+            </div>
+        </div>
+    </div>
+</div>

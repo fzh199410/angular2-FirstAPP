@@ -1,0 +1,20 @@
+{
+  "name": "angular2-quickstart",
+  "description": "",
+  "main": "",
+  "authors": [
+    "fuzhihong <fuzhihong@jxcec.cn>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/fzh199410/angular2-FirstAPP",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "moment": "^2.15.1"
+  }
+}

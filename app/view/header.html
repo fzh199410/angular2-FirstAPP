@@ -1,10 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title></title>
-</head>
-<body>
+<div class="container-fluid myHeader">
+    <div class="row">
+        <div class="left col-sm-4">
+            <a href="https://fzh199410.github.io/" style="padding-left: 5em;font-size:16px;font-family: 'Palatino Linotype';text-decoration: underline">Life Is Coding<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;By&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tommy</a>
+        </div>
+        <div  class="text-right col-sm-8">
+        <tabset >
 
-</body>
-</html>
+            <tab *ngFor="let tabz of tabs"
+                 [heading]="tabz.title"
+                 [active]="tabz.active"
+                 (select)="tabz.active = true"
+                 (deselect)="tabz.active = false"
+                 [disabled]="tabz.disabled"
+                 [removable]="tabz.removable"
+                 (removed)="removeTabHandler(tabz)">
+                <a style="width: 40px;height: 20px" routerLink={{tabz.routerLink}}>{{tabz.describe}}</a>
+            </tab>
+       </tabset>
+       </div>
+   </div>
+</div>
