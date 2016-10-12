@@ -1,10 +1,44 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title></title>
-</head>
-<body>
+<div class="container-fluid" >
+    <div class="row">
+        <carousel [interval]="myInterval" [noWrap]="noWrapSlides">
+            <slide *ngFor="let slidez of slides; let index=index"
+                   [active]="slidez.active">
+                <img [src]="slidez.image" style="margin:auto;width: 100%">
+                <div class="carousel-caption">
+                    <h1 style="color: #d5d5d5;font-family: dejavu sans mono, monospace">{{slidez.topic}}</h1>
 
-</body>
-</html>
+                    <h3 style="color: #d5d5d5;font-family: 'trebuchet ms'">{{slidez.comment}}</h3>
+                </div>
+            </slide>
+        </carousel>
+    </div>
+    <div class="row" style="padding: 40px 200px;color: #000000;background-color: white;text-align: center">
+        <div>
+            <h3>说走就走的旅行</h3>
+                <p>无论是苍凉的秀美的,绚烂的静雅的</p>
+                <p>都是天地的造化自然的恩赐</p>
+                <p>哪怕田间小径哪怕西风古道</p>
+                <p>自有一番枯藤老树昏鸦</p>
+                <p>小桥流水人家的意境只要心中怀着欣赏的态度</p>
+                <p>人间处处是胜景,加油! No Hesitate</p>
+        </div>
+    </div>
+    <div class="row">
+
+        <a class="image-block-link" href=""   *ngFor="let travel of travels" >
+            <div class="row-fluid image-block block400 grocek text-shadow" [ngStyle]="{'background': 'url(' + travel.url + ')no-repeat center center'}">
+                <div class="centered-table">
+                    <div class="content-table">
+                        <img class="box-shadow" [src]="travel.flag">
+                        <h2>{{travel.h2}}</h2>
+                        <h3>{{travel.h3}}</h3>
+                        <button class="btn btn-success btn-small">Let's Go</button>
+                    </div>
+                </div>
+            </div>
+        </a>
+
+    </div>
+</div>
+
+
