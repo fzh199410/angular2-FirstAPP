@@ -31,6 +31,7 @@
             'ng2-bootstrap':              'npm:ng2-bootstrap',
             'ng2-charts':                 'npm:ng2-charts',
             'ng2-file-upload':            'npm:ng2-file-upload',
+            'ng2-select':                 'npm:ng2-select',
             moment: 'node_modules/moment/moment.js'
         },
         // packages tells the System loader how to load when no filename and/or no extension
@@ -48,7 +49,8 @@
             },
             'ng2-bootstrap':              { defaultExtension: 'js' },
             'ng2-charts':                 { defaultExtension: 'js' },
-            'ng2-file-upload':            {  format: 'cjs',defaultExtension: 'js' }
+            'ng2-file-upload':            {  format: 'cjs',defaultExtension: 'js' },
+            'ng2-select':                 { defaultExtension: 'js' }
         }
     });
 })(this);

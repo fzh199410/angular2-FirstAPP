@@ -1,3 +1,6 @@
+/**
+ * Created by fuzhihong on 16/10/13.
+ */
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -8,21 +11,18 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-/**
- * Created by fuzhihong on 16/9/22.
- */
 var core_1 = require('@angular/core');
-var LoginComponent = (function () {
-    function LoginComponent() {
+var SigninComponent = (function () {
+    function SigninComponent() {
     }
-    LoginComponent = __decorate([
+    SigninComponent = __decorate([
         core_1.Component({
-            selector: 'login',
-            templateUrl: 'app/view/login.html'
+            selector: 'signin',
+            templateUrl: 'app/view/signin.html'
         }), 
         __metadata('design:paramtypes', [])
-    ], LoginComponent);
-    return LoginComponent;
+    ], SigninComponent);
+    return SigninComponent;
 }());
-exports.LoginComponent = LoginComponent;
-//# sourceMappingURL=login.component.js.map
+exports.SigninComponent = SigninComponent;
+//# sourceMappingURL=signin.component.js.map

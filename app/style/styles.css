@@ -289,3 +289,65 @@ footer .span4{
     color: white;
     letter-spacing: .1em;
 }
+.login-content {
+    height:450px;
+    padding: 5em 30%;
+    background: url("../img/parallax/testimonial.jpg")no-repeat center center;
+    background-size: cover;
+}
+.signin-content {
+    height:450px;
+    padding: 5em 30%;
+    background: url("../img/portfolio/portfolio-02.jpg")no-repeat center center;
+    background-size: cover;
+}
+.navbar-default {
+    border: none;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+}
+.navbar-spec {
+    color: #fafafa;
+    background-color: #181D27;
+}
+
+.login-frame {
+    width: 500px;
+    padding: 30px;
+    border: 1px solid #d2d2d2;
+    box-shadow: 0 2px 5px #d2d2d2;
+    background-color: #ffffff;
+}
+.login-frame span {
+    text-align: center;
+}
+
+.login-frame.form-group {
+    margin-bottom: 25px;
+}
+.login-frame.form-control {
+    height: 35px;
+    border-radius: 0;
+    border-color: #d2d2d2;
+}
+.login-frame.form-control:focus {
+     box-shadow: none;
+     border-color: #555555;
+ }
+
+
+.login-frame.btn {
+    height: 35px;
+    border-radius: 0;
+}
+
+.login-frame.flat-well {
+    background: #fff;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+}

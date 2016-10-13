@@ -12,15 +12,22 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * Created by fuzhihong on 16/9/22.
  */
 require('../rxjs-extensions');
+//Module
 var core_1 = require('@angular/core');
 var platform_browser_1 = require('@angular/platform-browser');
 var forms_1 = require('@angular/forms');
 var http_1 = require('@angular/http');
 var ng2_charts_1 = require('ng2-charts/ng2-charts');
 var ng2_file_upload_1 = require('ng2-file-upload/ng2-file-upload');
+var ng2_bootstrap_1 = require('ng2-bootstrap/ng2-bootstrap');
+var ng2_select_1 = require('ng2-select/ng2-select');
+//Directive
+var redify_directive_1 = require('../directive/redify.directive');
+var highlight_directive_1 = require('../directive/highlight.directive');
+//Htpp Service
 var angular2_in_memory_web_api_1 = require('angular2-in-memory-web-api');
 var in_memory_data_service_1 = require('../database/in-memory-data.service');
-var ng2_bootstrap_1 = require('ng2-bootstrap/ng2-bootstrap');
+//Component
 var app_component_1 = require('../component/app.component');
 var main_component_1 = require('../component/main.component');
 var footer_component_1 = require('../component/footer.component');
@@ -28,6 +35,9 @@ var header_component_1 = require('../component/header.component');
 var picture_component_1 = require('../component/picture.component');
 var about_component_1 = require('../component/about.component');
 var tommy_component_1 = require('../component/tommy.component');
+var signin_component_1 = require('../component/signin.component');
+var login_component_1 = require('../component/login.component');
+//route
 var app_routing_1 = require('../route/app.routing');
 var AppModule = (function () {
     function AppModule() {
@@ -42,6 +52,7 @@ var AppModule = (function () {
                 ng2_bootstrap_1.Ng2BootstrapModule,
                 ng2_charts_1.ChartsModule,
                 ng2_file_upload_1.FileUploadModule,
+                ng2_select_1.SelectModule,
                 app_routing_1.routing
             ],
             declarations: [
@@ -51,7 +62,11 @@ var AppModule = (function () {
                 header_component_1.HeaderComponent,
                 picture_component_1.PictureComponent,
                 about_component_1.AboutComponent,
-                tommy_component_1.TommyComponent
+                tommy_component_1.TommyComponent,
+                redify_directive_1.RedifyDirective,
+                highlight_directive_1.HighlightDirective,
+                signin_component_1.SigninComponent,
+                login_component_1.LoginComponent
             ],
             bootstrap: [
                 app_component_1.AppComponent
