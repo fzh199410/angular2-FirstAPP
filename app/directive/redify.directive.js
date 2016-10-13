@@ -9,20 +9,22 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 /**
- * Created by fuzhihong on 16/9/22.
+ * Created by fuzhihong on 16/10/13.
  */
 var core_1 = require('@angular/core');
-var LoginComponent = (function () {
-    function LoginComponent() {
+var RedifyDirective = (function () {
+    function RedifyDirective(_element, renderer) {
+        this._element = _element;
+        this.renderer = renderer;
+        renderer.setElementStyle(_element.nativeElement, 'color', 'red');
     }
-    LoginComponent = __decorate([
-        core_1.Component({
-            selector: 'login',
-            templateUrl: 'app/view/login.html'
+    RedifyDirective = __decorate([
+        core_1.Directive({
+            selector: '[redify]'
         }), 
-        __metadata('design:paramtypes', [])
-    ], LoginComponent);
-    return LoginComponent;
+        __metadata('design:paramtypes', [core_1.ElementRef, core_1.Renderer])
+    ], RedifyDirective);
+    return RedifyDirective;
 }());
-exports.LoginComponent = LoginComponent;
-//# sourceMappingURL=login.component.js.map
+exports.RedifyDirective = RedifyDirective;
+//# sourceMappingURL=redify.directive.js.map
