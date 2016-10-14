@@ -296,7 +296,7 @@ footer .span4{
     background-size: cover;
 }
 .signin-content {
-    height:450px;
+    height:500px;
     padding: 5em 30%;
     background: url("../img/portfolio/portfolio-02.jpg")no-repeat center center;
     background-size: cover;
@@ -350,4 +350,11 @@ footer .span4{
     -webkit-border-radius: 2px;
     -moz-border-radius: 2px;
     border-radius: 2px;
+}
+.share{
+    float: left;
+    margin-right: 1em;
+}
+.alert-danger{
+    margin-top: 1em;
 }
