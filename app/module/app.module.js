@@ -27,6 +27,7 @@ var highlight_directive_1 = require('../directive/highlight.directive');
 //Htpp Service
 var angular2_in_memory_web_api_1 = require('angular2-in-memory-web-api');
 var in_memory_data_service_1 = require('../database/in-memory-data.service');
+var user_service_1 = require('../service/user.service');
 //Component
 var app_component_1 = require('../component/app.component');
 var main_component_1 = require('../component/main.component');
@@ -68,6 +69,7 @@ var AppModule = (function () {
                 signin_component_1.SigninComponent,
                 login_component_1.LoginComponent
             ],
+            providers: [user_service_1.UserService],
             bootstrap: [
                 app_component_1.AppComponent
             ]

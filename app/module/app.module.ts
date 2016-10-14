@@ -17,7 +17,7 @@ import {HighlightDirective} from '../directive/highlight.directive'
 //Htpp Service
 import {InMemoryWebApiModule} from 'angular2-in-memory-web-api';
 import {InMemoryDataService} from '../database/in-memory-data.service'
-
+import {UserService} from '../service/user.service'
 
 //Component
 import {AppComponent} from '../component/app.component'
@@ -57,6 +57,7 @@ import {routing} from '../route/app.routing';
         SigninComponent,
         LoginComponent
     ],
+    providers:[UserService],
     bootstrap:[
         AppComponent
     ]
