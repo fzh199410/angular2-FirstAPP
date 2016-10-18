@@ -13,13 +13,20 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  */
 var core_1 = require('@angular/core');
 var http_1 = require('@angular/http');
+var Subject_1 = require('rxjs/Subject');
 require('rxjs/add/operator/toPromise');
 var UserService = (function () {
     function UserService(http) {
         this.http = http;
         this.headers = new http_1.Headers({ 'Content-Type': 'application/json' });
         this.userUrl = 'app/Users';
+        this.loginedUser = new Subject_1.Subject();
+        this.loginedUser$ = this.loginedUser.asObservable();
     }
+    UserService.prototype.LoginUser = function (user) {
+        console.log(user);
+        this.loginedUser.next(user);
+    };
     UserService.prototype.getUsers = function () {
         return this.http.get(this.userUrl)
             .toPromise()
@@ -35,13 +42,12 @@ var UserService = (function () {
             .then(function (res) { return res.json().data; });
     };
     UserService.prototype.login = function (UserInfo) {
-        this.getUser(UserInfo)
+        return this.getUser(UserInfo)
             .then(function (user) {
-            if (UserInfo === user) {
-                return user;
+            if (UserInfo.password === user.password && UserInfo.userName === user.userName) {
+                return true;
             }
             else {
-                console.log('账号密码错误');
                 return false;
             }
         });

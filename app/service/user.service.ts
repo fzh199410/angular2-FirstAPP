@@ -3,6 +3,7 @@
  */
 import { Injectable } from '@angular/core';
 import {Headers,Http} from '@angular/http';
+import {Subject}      from 'rxjs/Subject';
 
 import 'rxjs/add/operator/toPromise'
 
@@ -12,6 +13,15 @@ import {User} from './user'
 export class UserService{
     private headers=new Headers({'Content-Type':'application/json'});
     private userUrl='app/Users';
+
+    private loginedUser=new Subject<string>();
+
+    loginedUser$=this.loginedUser.asObservable();
+
+    LoginUser(user:string){
+        console.log(user)
+        this.loginedUser.next(user)
+    }
 
     constructor(private http:Http){}
 
@@ -30,9 +40,8 @@ export class UserService{
                         .then(res=>res.json().data)
     }
     login(UserInfo){
-        this.getUser(UserInfo)
-            .then(user=>{if(UserInfo===user){return user}
-                        else{console.log('账号密码错误');return false}
+        return this.getUser(UserInfo)
+            .then(user=>{if(UserInfo.password===user.password&&UserInfo.userName===user.userName){return true}else{return false}
             })
     }
 }

@@ -21,6 +21,7 @@ var ng2_charts_1 = require('ng2-charts/ng2-charts');
 var ng2_file_upload_1 = require('ng2-file-upload/ng2-file-upload');
 var ng2_bootstrap_1 = require('ng2-bootstrap/ng2-bootstrap');
 var ng2_select_1 = require('ng2-select/ng2-select');
+var cookies_service_1 = require('angular2-cookie/services/cookies.service');
 //Directive
 var redify_directive_1 = require('../directive/redify.directive');
 var highlight_directive_1 = require('../directive/highlight.directive');
@@ -69,7 +70,7 @@ var AppModule = (function () {
                 signin_component_1.SigninComponent,
                 login_component_1.LoginComponent
             ],
-            providers: [user_service_1.UserService],
+            providers: [user_service_1.UserService, cookies_service_1.CookieService],
             bootstrap: [
                 app_component_1.AppComponent
             ]

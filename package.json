@@ -20,6 +20,7 @@
     "@angular/platform-browser-dynamic": "2.0.0",
     "@angular/router": "3.0.0",
     "@angular/upgrade": "2.0.0",
+    "angular2-cookie": "^1.2.4",
     "angular2-in-memory-web-api": "0.0.20",
     "bootstrap": "^3.3.7",
     "chart.js": "^2.3.0",
