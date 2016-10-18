@@ -12,15 +12,38 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * Created by fuzhihong on 16/9/22.
  */
 var core_1 = require('@angular/core');
+var user_service_1 = require('../service/user.service');
+var core_2 = require('angular2-cookie/core');
 var LoginComponent = (function () {
-    function LoginComponent() {
+    function LoginComponent(userService, cookieService) {
+        this.userService = userService;
+        this.cookieService = cookieService;
+        this.UserInfo = {
+            userName: '',
+            password: ''
+        };
+        this.InfoWrong = false;
     }
+    LoginComponent.prototype.login = function (UserInfo) {
+        var _this = this;
+        this.userService.login(UserInfo)
+            .then(function (resp) {
+            if (resp === false) {
+                _this.InfoWrong = true;
+            }
+            else {
+                _this.InfoWrong = false;
+                _this.cookieService.put('loginUser', UserInfo.userName);
+                _this.userService.LoginUser(UserInfo.userName);
+            }
+        });
+    };
     LoginComponent = __decorate([
         core_1.Component({
             selector: 'login',
             templateUrl: 'app/view/login.html'
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [user_service_1.UserService, core_2.CookieService])
     ], LoginComponent);
     return LoginComponent;
 }());

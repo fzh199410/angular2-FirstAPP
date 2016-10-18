@@ -11,6 +11,7 @@ import { ChartsModule } from 'ng2-charts/ng2-charts';
 import {FileUploadModule} from 'ng2-file-upload/ng2-file-upload'
 import { Ng2BootstrapModule } from 'ng2-bootstrap/ng2-bootstrap';
 import { SelectModule } from 'ng2-select/ng2-select';
+import { CookieService } from 'angular2-cookie/services/cookies.service';
 //Directive
 import {RedifyDirective} from '../directive/redify.directive';
 import {HighlightDirective} from '../directive/highlight.directive'
@@ -57,7 +58,7 @@ import {routing} from '../route/app.routing';
         SigninComponent,
         LoginComponent
     ],
-    providers:[UserService],
+    providers:[UserService,CookieService],
     bootstrap:[
         AppComponent
     ]

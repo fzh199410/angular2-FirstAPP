@@ -1,8 +1,11 @@
 /**
  * Created by fuzhihong on 16/9/22.
  */
-import {Component,ChangeDetectionStrategy} from '@angular/core'
-
+import {Component,ChangeDetectionStrategy,OnInit,OnDestroy} from '@angular/core'
+import {CookieService} from 'angular2-cookie/core';
+import {UserService} from '../service/user.service';
+import { Subscription }   from 'rxjs/Subscription';
+import {Router} from '@angular/router';
 @Component({
     selector:'my-header',
     changeDetection:ChangeDetectionStrategy.OnPush,
@@ -10,7 +13,10 @@ import {Component,ChangeDetectionStrategy} from '@angular/core'
 
 })
 
-export class HeaderComponent {
+export class HeaderComponent implements OnInit,OnDestroy{
+    isLogin:any=false;
+    loginUser:any='';
+    subscription:Subscription
     public tabs:Array<any> = [
         {title: '首页', active:true,routerLink:'/main',describe:'点我进入 [首页] => 天涯何处不识君 orz'},
         {title: '图片展示',  disabled: false,routerLink:'/picture',describe:'点我进入 [图片展示] => 包客官您看个够!'},
@@ -20,9 +26,27 @@ export class HeaderComponent {
         {title: '注册', routerLink:'/signin',describe:'点我进入 [注册] => 来安个家吧!'},
         {title: '登录',  routerLink:'/login',describe:'点我进入 [登录] => 脱鞋进来看看吧.!.'},
     ];
-
+    constructor(private userService:UserService,private router:Router){
+        this.subscription=userService.loginedUser$.subscribe(
+            user=>{
+                this.loginUser=user;
+                this.isLogin=true;
+                router.navigate(['/main']);
+            }
+        )
+    }
     public setActiveTab(index:number):void {
         this.tabs[index].active = true;
     }
 
+    constructor(private cookieService:CookieService){}
+
+    //ngOnInit(){
+    //     this.isLogin=this.cookieService.get('loginUser')?true:false;
+    //    console.log(this.isLogin)
+    //     this.loginUser=this.cookieService.get('loginUser')
+    //} TODO
+    ngOnDestroy(){
+        this.subscription.unsubscribe()
+    }
 }

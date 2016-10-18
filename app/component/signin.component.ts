@@ -14,7 +14,7 @@ import {UserService} from '../service/user.service'
 })
 
 export class SigninComponent implements OnInit{
-    UserInfo:{}={
+    UserInfo={
         userName:'',
         password:''
     };
