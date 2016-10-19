@@ -39,6 +39,7 @@ var HeaderComponent = (function () {
     HeaderComponent.prototype.setActiveTab = function (index) {
         this.tabs[index].active = true;
     };
+    //constructor(private cookieService:CookieService){}
     //ngOnInit(){
     //     this.isLogin=this.cookieService.get('loginUser')?true:false;
     //    console.log(this.isLogin)

@@ -2,7 +2,7 @@
  * Created by fuzhihong on 16/10/14.
  */
 import { Injectable } from '@angular/core';
-import {Headers,Http} from '@angular/http';
+import {Headers,Http,Response} from '@angular/http';
 import {Subject}      from 'rxjs/Subject';
 
 import 'rxjs/add/operator/toPromise'
