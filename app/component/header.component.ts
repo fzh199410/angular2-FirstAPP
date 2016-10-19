@@ -1,11 +1,14 @@
 /**
  * Created by fuzhihong on 16/9/22.
  */
-import {Component,ChangeDetectionStrategy,OnInit,OnDestroy} from '@angular/core'
+import {Component,ChangeDetectionStrategy,OnDestroy} from '@angular/core'
 import {CookieService} from 'angular2-cookie/core';
 import {UserService} from '../service/user.service';
 import { Subscription }   from 'rxjs/Subscription';
 import {Router} from '@angular/router';
+
+
+
 @Component({
     selector:'my-header',
     changeDetection:ChangeDetectionStrategy.OnPush,
@@ -13,7 +16,7 @@ import {Router} from '@angular/router';
 
 })
 
-export class HeaderComponent implements OnInit,OnDestroy{
+export class HeaderComponent implements OnDestroy{
     isLogin:any=false;
     loginUser:any='';
     subscription:Subscription
@@ -39,7 +42,7 @@ export class HeaderComponent implements OnInit,OnDestroy{
         this.tabs[index].active = true;
     }
 
-    constructor(private cookieService:CookieService){}
+    //constructor(private cookieService:CookieService){}
 
     //ngOnInit(){
     //     this.isLogin=this.cookieService.get('loginUser')?true:false;
